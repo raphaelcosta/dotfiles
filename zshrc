@@ -1,8 +1,12 @@
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
 
+export HISTSIZE=1000
+export SAVEHIST=1000
+export HISTFILE=~/.history
 
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="./bin:$PATH"
 
 # completion
 autoload -U compinit
