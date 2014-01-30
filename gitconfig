@@ -19,7 +19,23 @@
   autocrlf = input
 [merge]
   ff = only
+	tool = Kaleidoscope
 [include]
   path = .gitconfig.local
 [commit]
   template = ~/.gitmessage
+[user]
+	name = Raphael Costa
+	email = raphael@raphaelcosta.net
+[mergetool]
+	keepBackup = true
+	prompt = false
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[diff]
+	tool = Kaleidoscope
+[difftool]
+	prompt = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
