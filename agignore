@@ -1,3 +1,15 @@
 log
-tags
+logs
 tmp
+public/system
+/.git
+*.tags*
+*.gemtags*
+*.jpg
+*.png
+*.csv
+*.tsv
+*.tmp*
+*.old
+*.pdf
+*.log

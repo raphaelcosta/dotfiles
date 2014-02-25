@@ -96,6 +96,10 @@ alias f='fasd -f' # file
 alias z='fasd_cd -d' # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # interactive directory jump
 
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+TZ='America/Sao_Paulo'; export TZ
+
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
