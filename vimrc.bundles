@@ -23,7 +23,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/tComment'
-Bundle 'sickill/vim-pasta'
+" Bundle 'sickill/vim-pasta'
 Bundle 'rking/ag.vim'
 Bundle 'Lokaltog/vim-easymotion'
 

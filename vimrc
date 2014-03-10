@@ -92,6 +92,7 @@ highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 " Numbers
+set relativenumber 
 set number
 set numberwidth=5
 
@@ -149,7 +150,7 @@ nnoremap <C-l> <C-w>l
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
 
-set clipboard=unnamed
+" set clipboard=unnamed
 
 
 map W <Plug>CamelCaseMotion_w

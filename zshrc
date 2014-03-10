@@ -7,6 +7,7 @@ export HISTFILE=~/.history
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="./bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 
 # completion
 autoload -U compinit
