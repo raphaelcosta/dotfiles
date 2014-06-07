@@ -1,6 +1,8 @@
 " Leader
 let mapleader = ","
 
+set timeoutlen=1000 ttimeoutlen=0
+
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nocompatible  " Use Vim settings, rather then Vi settings
 set nobackup

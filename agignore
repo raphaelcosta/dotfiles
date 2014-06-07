@@ -4,6 +4,7 @@ tmp
 public/system
 coverage
 bin
+.git
 /.git
 *.tags*
 *.gemtags*

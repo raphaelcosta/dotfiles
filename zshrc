@@ -5,7 +5,6 @@ export HISTSIZE=1000
 export SAVEHIST=1000
 export HISTFILE=~/.history
 
-export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="./bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 
