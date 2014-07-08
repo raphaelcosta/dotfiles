@@ -34,6 +34,8 @@ if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
+source ~/.dotfiles/vim/solarized
+
 filetype plugin indent on
 
 augroup vimrcEx
@@ -89,9 +91,11 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:ctrlp_use_caching = 0
 
 " Color scheme
-colorscheme github
-highlight NonText guibg=#060606
-highlight Folded  guibg=#0A0A0A guifg=#9090D0
+set background=dark
+colorscheme solarized
+" highlight NonText guibg=#060606
+" highlight Folded  guibg=#0A0A0A guifg=#9090D0
+let g:solarized_termcolors=256
 
 " Numbers
 set relativenumber 

@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/raphaelcosta/.dotfiles'
+let g:netrw_dirhist_2='/Users/raphaelcosta/github/discourse/plugins/ateliware-axug-br-windowslive'
+let g:netrw_dirhist_3='/Users/raphaelcosta/.dotfiles'

@@ -10,6 +10,7 @@ export PATH="/usr/local/bin:$PATH"
 
 # completion
 autoload -U compinit
+autoload -U colors && colors
 compinit
 
 for function in ~/.zsh/functions/*; do

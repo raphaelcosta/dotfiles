@@ -1,3 +1,7 @@
+# makes color constants available
+autoload -U colors
+colors
+
 # adds the current branch name in green
 git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null)
@@ -6,9 +10,6 @@ git_prompt_info() {
   fi
 }
 
-# makes color constants available
-autoload -U colors
-colors
 
 # enable colored output from ls, etc
 export CLICOLOR=1

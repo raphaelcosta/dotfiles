@@ -25,7 +25,7 @@
 [commit]
   template = ~/.gitmessage
 [user]
-	name = Raphael
+	name = r
 	email = raphael@raphaelcosta.net
 [mergetool]
 	keepBackup = true
