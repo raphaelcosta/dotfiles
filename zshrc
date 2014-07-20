@@ -5,8 +5,10 @@ export HISTSIZE=1000
 export SAVEHIST=1000
 export HISTFILE=~/.history
 
+export GOPATH=$HOME/.go
 export PATH="./bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
+export PATH=$PATH:$GOPATH/bin
 
 # completion
 autoload -U compinit

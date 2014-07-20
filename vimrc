@@ -1,6 +1,17 @@
 " Leader
 let mapleader = ","
 
+" GO
+if exists("g:did_load_filetypes")
+  filetype off
+  filetype plugin indent off
+endif
+set runtimepath+=$GOROOT/misc/vim " replace $GOROOT with the output of: go env GOROOT
+filetype plugin indent on
+syntax on
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+autocmd FileType go compiler go
+
 set timeoutlen=1000 ttimeoutlen=0
 
 set backspace=2   " Backspace deletes like most programs in insert mode
