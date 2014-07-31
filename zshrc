@@ -5,10 +5,18 @@ export HISTSIZE=1000
 export SAVEHIST=1000
 export HISTFILE=~/.history
 
-export GOPATH=$HOME/.go
+export GOPATH=$HOME/Go
 export PATH="./bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH=$PATH:$GOPATH/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+# source '/Users/raphaelcosta/google-cloud-sdk/path.bash.inc'
+export PATH=/Users/raphaelcosta/google-cloud-sdk/bin:$PATH
+alias goapp=~/google-cloud-sdk/platform/google_appengine/goapp
+
+# The next line enables bash completion for gcloud.
+# source '/Users/raphaelcosta/google-cloud-sdk/completion.bash.inc'
 
 # completion
 autoload -U compinit
