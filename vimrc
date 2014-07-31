@@ -89,7 +89,7 @@ set expandtab
 set nowrap
 
 " Display extra whitespace
-" set list listchars=tab:.
+" set list listchars=tab:»·,trail:·
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 " Use Ag over Grep
@@ -102,14 +102,13 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:ctrlp_use_caching = 0
 
 " Color scheme
-set background=dark
-colorscheme solarized
-" highlight NonText guibg=#060606
-" highlight Folded  guibg=#0A0A0A guifg=#9090D0
-let g:solarized_termcolors=256
+let g:hybrid_use_iTerm_colors = 1
+colorscheme hybrid
+
+let g:airline_powerline_fonts = 1
 
 " Numbers
-set relativenumber 
+set relativenumber
 set number
 set numberwidth=5
 
