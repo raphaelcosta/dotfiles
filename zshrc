@@ -6,6 +6,10 @@ export SAVEHIST=1000
 export HISTFILE=~/.history
 
 export GOPATH=$HOME/Go
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="./bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH=$PATH:$GOPATH/bin
@@ -106,8 +110,6 @@ alias d='fasd -d' # directory
 alias f='fasd -f' # file
 alias z='fasd_cd -d' # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # interactive directory jump
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 TZ='America/Sao_Paulo'; export TZ
 
