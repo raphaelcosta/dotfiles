@@ -8,6 +8,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'bling/vim-airline'
+Bundle 'edkolev/tmuxline.vim'
 
 " Define bundles via Github repos
 " Bundle 'croaky/vim-colors-github'
@@ -39,7 +40,6 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 
-" Bundle 'jnwhiteh/vim-golang'
 Bundle 'fatih/vim-go'
 
 Bundle 'rizzatti/funcoo.vim'

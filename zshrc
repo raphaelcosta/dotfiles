@@ -113,6 +113,8 @@ alias zz='fasd_cd -d -i' # interactive directory jump
 
 TZ='America/Sao_Paulo'; export TZ
 
+ssh-add ~/.ssh/id_rsa
+
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 

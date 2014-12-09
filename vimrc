@@ -107,6 +107,13 @@ let g:hybrid_use_iTerm_colors = 1
 colorscheme hybrid
 
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tmuxline#enabled = 0
+
+let g:syntastic_go_checkers = []
+
+
+let g:tmuxline_theme  = 'powerline'
+let g:tmuxline_preset = 'full'
 
 " Numbers
 set relativenumber
@@ -202,6 +209,19 @@ nmap <silent> // :nohlsearch<CR>
 let g:ctrlp_map = ',t'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|public)$'
 nnoremap <silent> ,t :CtrlP<CR>
+
+"*****************************************************************************
+"" Abbreviations
+"*****************************************************************************
+"" no one is really happy until you have this shortcuts
+cab W! w!
+cab Q! q!
+cab Wq wq
+cab Wa wa
+cab wQ wq
+cab WQ wq
+cab W w
+cab Q q
 
 " via: http://rails-bestpractices.com/posts/60-remove-trailing-whitespace
 " Strip trailing whitespace
