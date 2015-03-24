@@ -11,6 +11,9 @@ let mapleader = ","
 " syntax on
 " autocmd FileType go autocmd BufWritePre <buffer> Fmt
 " autocmd FileType go compiler go
+"
+autocmd BufWritePre * :%s/\s\+$//e
+set listchars=tab:\.\ ,trail:·
 
 set timeoutlen=1000 ttimeoutlen=0
 
@@ -41,6 +44,7 @@ set viminfo='100,f1 " Save up to 100 marks, enable capital marks
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 set relativenumber
+set showmatch
 
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
