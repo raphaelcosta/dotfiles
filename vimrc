@@ -50,8 +50,6 @@ if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
-source ~/.dotfiles/vim/solarized
-
 filetype plugin indent on
 
 augroup vimrcEx
@@ -99,6 +97,8 @@ set nowrap
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 " Use Ag over Grep
 set grepprg=ag\ --nogroup\ --nocolor
+let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ack_use_dispatch = 1
 
 " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
@@ -107,14 +107,28 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:ctrlp_use_caching = 0
 
 " Color scheme
-let g:hybrid_use_iTerm_colors = 1
+syntax on
+set background=dark
 colorscheme hybrid
+let g:hybrid_custom_term_colors = 1
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tmuxline#enabled = 0
 
 let g:syntastic_go_checkers = []
+let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = {
+        \ "mode": "passive",
+        \ "active_filetypes": [],
+        \ "passive_filetypes": ["puppet"] }
 
 let g:tmuxline_theme  = 'powerline'
 let g:tmuxline_preset = 'full'
@@ -175,8 +189,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
 
 " set clipboard=unnamed
 
@@ -226,6 +238,15 @@ cab wQ wq
 cab WQ wq
 cab W w
 cab Q q
+
+nmap :W :w
+nmap :Q :q
+nmap :wQ :wq
+nmap :WQ :wq
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap \ :Ack<SPACE>
 
 " via: http://rails-bestpractices.com/posts/60-remove-trailing-whitespace
 " Strip trailing whitespace
