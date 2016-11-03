@@ -18,7 +18,7 @@
 	excludesfile = /Users/raphaelcosta/.gitignore
   autocrlf = input
 [merge]
-  ff = only
+	ff = false
 	tool = Kaleidoscope
 [include]
   path = .gitconfig.local
@@ -46,3 +46,5 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[pull]
+	rebase = true

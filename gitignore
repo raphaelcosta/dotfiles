@@ -1,4 +1,5 @@
 *.DS_Store
+:w
 .DS_Store
 *.sw[nop]
 .bundle

@@ -120,3 +120,8 @@ ssh-add ~/.ssh/id_rsa
 
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# added by travis gem
+[ -f /Users/raphaelcosta/.travis/travis.sh ] && source /Users/raphaelcosta/.travis/travis.sh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

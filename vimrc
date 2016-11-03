@@ -92,13 +92,13 @@ set expandtab
 set nowrap
 
 " Display extra whitespace
-" set list listchars=tab:»·,trail:·
+set list listchars=tab:»·,trail:·
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 " Use Ag over Grep
 set grepprg=ag\ --nogroup\ --nocolor
 let g:ackprg = 'ag --nogroup --nocolor --column'
-let g:ack_use_dispatch = 1
+" let g:ack_use_dispatch = 1
 
 " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
@@ -109,29 +109,47 @@ let g:ctrlp_use_caching = 0
 " Color scheme
 syntax on
 set background=dark
-colorscheme hybrid
-let g:hybrid_custom_term_colors = 1
+colorscheme dracula
+" let g:hybrid_custom_term_colors = 1
+
+let g:jsx_ext_required = 0
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tmuxline#enabled = 0
+let g:airline_theme='dracula'
 
+" SYNTASTIC
 let g:syntastic_go_checkers = []
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+let g:syntastic_javascript_checkers = ['eslint', 'flow']
+
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 let g:syntastic_mode_map = {
         \ "mode": "passive",
         \ "active_filetypes": [],
-        \ "passive_filetypes": ["puppet"] }
+        \ "passive_filetypes": ["ruby"] }
 
-let g:tmuxline_theme  = 'powerline'
-let g:tmuxline_preset = 'full'
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
+
+let g:tmuxline_theme  = 'vim_statusline_1'
+let g:tmuxline_powerline_separators = 0
+let g:tmuxline_preset = 'nightly_fox'
 
 " Numbers
 set relativenumber
@@ -175,6 +193,8 @@ nnoremap <Down> :echoe "Use j"<CR>
 nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
+
+noremap Q <nop>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
