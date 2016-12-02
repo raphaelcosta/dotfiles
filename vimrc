@@ -137,10 +137,22 @@ let g:syntastic_loc_list_height = 5
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
+" let g:syntastic_mode_map = {
+"         \ "mode": "passive",
+"         \ "active_filetypes": [],
+"         \ "passive_filetypes": ["ruby"] }
+"
+" Run NeoMake on read and write operations
+" autocmd! BufReadPost,BufWritePost * Neomake
+
+" Disable inherited syntastic
 let g:syntastic_mode_map = {
-        \ "mode": "passive",
-        \ "active_filetypes": [],
-        \ "passive_filetypes": ["ruby"] }
+  \ "mode": "passive",
+  \ "active_filetypes": [],
+  \ "passive_filetypes": [] }
+
+let g:neomake_serialize = 1
+let g:neomake_serialize_abort_on_error = 1
 
 highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
@@ -284,7 +296,7 @@ endfunction
 command! StripTrailingWhitespaces call <SID>StripTrailingWhitespaces()
 nmap ,w :StripTrailingWhitespaces<CR>
 
-runtime macros/matchit.vim
+" runtime macros/matchit.vim
 
 nnoremap <leader>y :call system('nc localhost 8377', @0)<CR>
 
