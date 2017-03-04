@@ -18,3 +18,4 @@ bin
 *.log
 Godeps
 _build
+node_modules

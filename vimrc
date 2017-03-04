@@ -136,11 +136,11 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 5
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
-" let g:syntastic_mode_map = {
-"         \ "mode": "passive",
-"         \ "active_filetypes": [],
-"         \ "passive_filetypes": ["ruby"] }
+let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = {
+        \ "mode": "passive",
+        \ "active_filetypes": [],
+        \ "passive_filetypes": [] }
 "
 " Run NeoMake on read and write operations
 " autocmd! BufReadPost,BufWritePost * Neomake
@@ -153,6 +153,8 @@ let g:syntastic_mode_map = {
 
 let g:neomake_serialize = 1
 let g:neomake_serialize_abort_on_error = 1
+
+let g:jsx_ext_required = 0
 
 highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
@@ -220,10 +222,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-
-
-" set clipboard=unnamed
-
 
 map W <Plug>CamelCaseMotion_w
 map B <Plug>CamelCaseMotion_b
@@ -305,6 +303,15 @@ let g:yankring_history_file = '.yankring-history'
  let g:no_turbux_mappings = 1
  map <leader>rt <Plug>SendTestToTmux
  map <leader>rT <Plug>SendFocusedTestToTmux
+
+"  if has('nvim')
+"    nmap <BS> <C-W>h
+"  endif
+"
+"  if has('nvim')
+"   nmap <bs> :<c-u>TmuxNavigateLeft<cr>
+"   nmap <bs> :<c-l>TmuxNavigateRight<cr>
+" endif
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")

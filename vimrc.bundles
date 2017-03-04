@@ -20,12 +20,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-endwise'
-" Bundle 'tpope/vim-fugitive'
-" Bundle 'tpope/vim-dispatch'
-" Bundle 'tpope/vim-heroku'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
-" Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-scripts/matchit.zip'
 " Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/tComment'
@@ -39,8 +35,10 @@ Bundle 'mileszs/ack.vim'
 " Bundle 'kana/vim-textobj-user'
 " Bundle 'nelstrom/vim-textobj-rubyblock'
 "
-" Bundle 'pangloss/vim-javascript'
-Bundle 'othree/yajs.vim'
+Bundle 'pangloss/vim-javascript'
+" Bundle 'othree/yajs.vim'
+"
+Bundle 'kchmck/vim-coffee-script'
 
 Bundle 'benmills/vimux'
 Bundle 'jgdavey/vim-turbux'
@@ -51,7 +49,7 @@ Bundle 'vim-scripts/YankRing.vim'
 " Elixir
 " Bundle "elixir-lang/vim-elixir"
 
-Bundle "sheerun/vim-polyglot"
+" Bundle "sheerun/vim-polyglot"
 Bundle "ConradIrwin/vim-bracketed-paste"
 
 Bundle "dracula/vim"

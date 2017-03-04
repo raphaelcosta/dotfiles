@@ -1,6 +1,10 @@
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
 
+# infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
+# tic $TERM.ti
+
+export TERM='xterm-256color'
 export HISTSIZE=1000
 export SAVEHIST=1000
 export HISTFILE=~/.history
@@ -13,11 +17,19 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="./bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH=$PATH:$GOPATH/bin
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+
+export DATABASE_URL="postgres://pipefy:password@localhost:5432/pipefy_dev"
+
 
 # The next line updates PATH for the Google Cloud SDK.
 # source '/Users/raphaelcosta/google-cloud-sdk/path.bash.inc'
-export PATH=/Users/raphaelcosta/google-cloud-sdk/bin:$PATH
+export PATH=/Applications/Genymotion.app/Contents/MacOS/tools/:$PATH
 alias goapp=~/google-cloud-sdk/platform/google_appengine/goapp
+
+# if type nvim > /dev/null 2>&1; then
+#   alias vim='nvim'
+# fi
 
 # The next line enables bash completion for gcloud.
 # source '/Users/raphaelcosta/google-cloud-sdk/completion.bash.inc'
