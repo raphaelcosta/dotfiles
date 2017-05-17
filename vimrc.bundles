@@ -17,13 +17,16 @@ Bundle 'edkolev/tmuxline.vim'
 " Bundle 'w0ng/vim-hybrid'
 " Bundle 'danro/rename.vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/syntastic'
+" Bundle 'scrooloose/syntastic'
+Bundle 'w0rp/ale'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/matchit.zip'
 " Bundle 'vim-scripts/ctags.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'mhinz/vim-grepper'
 Bundle 'vim-scripts/tComment'
 " Bundle 'sickill/vim-pasta'
 " Bundle 'rking/ag.vim'
@@ -47,7 +50,7 @@ Bundle 'vim-scripts/camelcasemotion.git'
 Bundle 'vim-scripts/YankRing.vim'
 
 " Elixir
-" Bundle "elixir-lang/vim-elixir"
+Bundle "elixir-lang/vim-elixir"
 
 " Bundle "sheerun/vim-polyglot"
 Bundle "ConradIrwin/vim-bracketed-paste"
@@ -55,7 +58,7 @@ Bundle "ConradIrwin/vim-bracketed-paste"
 Bundle "dracula/vim"
 Bundle 'mxw/vim-jsx'
 
-Bundle "neomake/neomake"
+" Bundle "neomake/neomake"
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local

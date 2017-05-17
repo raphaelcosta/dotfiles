@@ -132,28 +132,47 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = {
-        \ "mode": "passive",
-        \ "active_filetypes": [],
-        \ "passive_filetypes": [] }
+" set clipboard=unnamed
+
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_loc_list_height = 2
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_mode_map = {
+"         \ "mode": "active",
+"         \ "active_filetypes": ['ruby', 'javascript', 'jsx', 'javascript.jsx'],
+"         \ "passive_filetypes": [] }
+" "
+" " Run NeoMake on read and write operations
 "
-" Run NeoMake on read and write operations
+" let g:syntastic_mode_map = {
+"   \ "mode": "passive",
+"   \ "active_filetypes": [],
+"   \ "passive_filetypes": [] }
+
+" let g:neomake_javascript_enabled_makers = ['eslint']
+" let g:neomake_jsx_enabled_makers = ['eslint']
+" " let g:neomake_javascript_eslint_exe='$(npm bin)/eslint'
+" let g:neomake_javascript_eslint_maker = {
+"             \ 'args': ['--no-color', '--format'],
+"             \ 'errorformat': '%f: line %l\, col %c\, %m'
+"             \ }
+" let g:neomake_serialize = 1
+" let g:neomake_verbose = 3
+" let g:neomake_logfile= '/Users/raphaelcosta/neomake.log'
+" let g:neomake_serialize_abort_on_error = 1
+"
 " autocmd! BufReadPost,BufWritePost * Neomake
+" let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+" let g:ale_statusline_format = ['%#ale_error# ⨉ %d %*', ' %#ale_warning# ⚠ %d %*', '%#ale_info ⬥ ok %*']
+"
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
 
-" Disable inherited syntastic
-let g:syntastic_mode_map = {
-  \ "mode": "passive",
-  \ "active_filetypes": [],
-  \ "passive_filetypes": [] }
-
-let g:neomake_serialize = 1
-let g:neomake_serialize_abort_on_error = 1
-
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
 let g:jsx_ext_required = 0
 
 highlight link SyntasticErrorSign SignColumn

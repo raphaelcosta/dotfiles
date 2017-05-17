@@ -1,6 +1,33 @@
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
+autoload -U colors
+colors
 
+# adds the current branch name in green
+git_prompt_info() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null)
+  if [[ -n $ref ]]; then
+    echo "[%{$fg_bold[green]%}${ref#refs/heads/}%{$reset_color%}]"
+  fi
+}
+
+
+# enable colored output from ls, etc
+export CLICOLOR=1
+
+# expand functions in the prompt
+setopt prompt_subst
+
+# prompt
+export PS1='$(git_prompt_info)[${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%~%{$reset_color%}] '
+
+# load thoughtbot/dotfiles scripts
+export PATH="$HOME/.bin:$PATH"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 # infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
 # tic $TERM.ti
 
@@ -10,16 +37,13 @@ export SAVEHIST=1000
 export HISTFILE=~/.history
 
 export GOPATH=$HOME/Go
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="./bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH=$PATH:$GOPATH/bin
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
-export DATABASE_URL="postgres://pipefy:password@localhost:5432/pipefy_dev"
+# export DATABASE_URL="postgres://pipefy:password@localhost:5432/pipefy_dev"
 
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -67,12 +91,6 @@ bindkey "^P" history-search-backward
 bindkey "^Y" accept-and-hold
 bindkey "^N" insert-last-word
 bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
-
-# expand functions in the prompt
-setopt prompt_subst
-
-# prompt
-export PS1='[${SSH_CONNECTION+"%n@%m:"}%~] '
 
 # ignore duplicate history entries
 setopt histignoredups
@@ -137,3 +155,5 @@ ssh-add ~/.ssh/id_rsa
 [ -f /Users/raphaelcosta/.travis/travis.sh ] && source /Users/raphaelcosta/.travis/travis.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export PATH="./bin:$PATH"
