@@ -167,9 +167,9 @@ set statusline+=%*
 " let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 " let g:ale_statusline_format = ['%#ale_error# ⨉ %d %*', ' %#ale_warning# ⚠ %d %*', '%#ale_info ⬥ ok %*']
 "
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\}
+let g:ale_linters = { 'javascript': [] }
+
+   " 'javascript': ['eslint'],
 
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
