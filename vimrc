@@ -109,6 +109,9 @@ let g:ctrlp_use_caching = 0
 " Color scheme
 syntax on
 set background=dark
+set termguicolors
+let g:dracula_italic = 0
+let g:dracula_colorterm = 0
 colorscheme dracula
 " let g:hybrid_custom_term_colors = 1
 
@@ -167,10 +170,11 @@ set statusline+=%*
 " let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 " let g:ale_statusline_format = ['%#ale_error# ⨉ %d %*', ' %#ale_warning# ⚠ %d %*', '%#ale_info ⬥ ok %*']
 "
-let g:ale_linters = { 'javascript': [] }
+" let g:ale_linters = { 'javascript': [] }
 
    " 'javascript': ['eslint'],
-
+   "
+let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
 let g:jsx_ext_required = 0

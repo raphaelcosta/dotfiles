@@ -48,3 +48,6 @@
 	required = true
 [pull]
 	rebase = true
+[credential]
+	UseHttpPath = true
+	helper = !aws codecommit credential-helper $@
