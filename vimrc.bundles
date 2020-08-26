@@ -56,7 +56,8 @@ Bundle "elixir-lang/vim-elixir"
 Bundle "ConradIrwin/vim-bracketed-paste"
 
 Bundle "dracula/vim"
-Bundle 'mxw/vim-jsx'
+" Bundle 'mxw/vim-jsx'
+Bundle "maxmellon/vim-jsx-pretty"
 
 " Bundle "neomake/neomake"
 
